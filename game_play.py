@@ -5,7 +5,7 @@ def player(board, size):
     global color_to_mark
     lst = []
     color_to_mark = board[0][0]
-    check_all(board, (0,0), lst)
+    check_all(board, (0, 0), lst)
     for row in board:
         for i in range(len(row)):
             if row[i] == 'marked':
@@ -48,7 +48,7 @@ def check_up(board, index):
         board[index[0]-1][index[1]] = 'marked'
         return (index[0]-1, index[1])
     else:
-        return 
+        return
 
 
 def check_left(board, index):
@@ -56,7 +56,7 @@ def check_left(board, index):
         board[index[0]][index[1]-1] = 'marked'
         return (index[0], index[1]-1)
     else:
-        return 
+        return
 
 
 def check_right(board, index):
@@ -64,7 +64,7 @@ def check_right(board, index):
         board[index[0]][index[1]+1] = 'marked'
         return (index[0], index[1]+1)
     else:
-        return 
+        return
 
 
 def check_down(board, index):
@@ -72,4 +72,4 @@ def check_down(board, index):
         board[index[0]+1][index[1]] = 'marked'
         return (index[0]+1, index[1])
     else:
-        return 
+        return

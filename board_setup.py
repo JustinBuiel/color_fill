@@ -9,7 +9,7 @@ def create_board(size):
 
     for row in board:
         for col in range(len(row)):
-            choice = random.randint(0,60)
+            choice = random.randint(0, 60)
 
             if choice < 10:
                 color = colors[0]
@@ -23,7 +23,7 @@ def create_board(size):
                 color = colors[4]
             else:
                 color = colors[5]
-            
+
             row[col] = color
 
     return board
