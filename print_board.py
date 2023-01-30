@@ -1,6 +1,5 @@
 from PIL import Image, ImageDraw
 
-
 color_codes = {
     'white': (255, 255, 255),
     'red': (255, 0, 0),
