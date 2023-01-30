@@ -21,13 +21,13 @@ def check_all(board, index: tuple, lst: list):
         del lst[0]
 
     if row != 0:
-        append_val(lst, check_up(board, index))
+        lst = append_val(lst, check_up(board, index))
     if col != 0:
-        append_val(lst, check_left(board, index))
+        lst = append_val(lst, check_left(board, index))
     if col != board_size - 1:
-        append_val(lst, check_right(board, index))
+        lst = append_val(lst, check_right(board, index))
     if row != board_size - 1:
-        append_val(lst, check_down(board, index))
+        lst = append_val(lst, check_down(board, index))
 
     if lst:
         check_all(board, lst[0], lst)
@@ -36,7 +36,9 @@ def check_all(board, index: tuple, lst: list):
 
 
 def append_val(lst: list, val):
-    lst.append(val)
+    if val is not None:
+        lst.append(val)
+    return lst
 
 
 def check_up(board, index):
