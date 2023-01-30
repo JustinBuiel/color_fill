@@ -21,26 +21,22 @@ def check_all(board, index: tuple, lst: list):
         del lst[0]
 
     if row != 0:
-        val = check_up(board, index)
-        if val is not None:
-            lst.append(val)
+        append_val(lst, check_up(board, index))
     if col != 0:
-        val = check_left(board, index)
-        if val is not None:
-            lst.append(val)
+        append_val(lst, check_left(board, index))
     if col != board_size - 1:
-        val = check_right(board, index)
-        if val is not None:
-            lst.append(val)
+        append_val(lst, check_right(board, index))
     if row != board_size - 1:
-        val = check_down(board, index)
-        if val is not None:
-            lst.append(val)
+        append_val(lst, check_down(board, index))
 
     if lst:
         check_all(board, lst[0], lst)
     else:
         return
+
+
+def append_val(lst: list, val):
+    lst.append(val)
 
 
 def check_up(board, index):
